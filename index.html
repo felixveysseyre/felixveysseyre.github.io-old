@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Félix VEYSSEYRE</title>
+
+		<!-- Metadata -->
+
+		<meta charset="utf-8"/>
+
+		<!-- CSS -->
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:200,400,700">
+
+		<!-- LESS -->
+
+		<link rel="stylesheet/less" type="text/css" href="less/style.less">
+
+		<!-- Javascript -->
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script> <!-- TODO -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+		<script src="js/googleAnalytics.js"></script>
+		<script src="js/index.js"></script>
+
+	</head>
+
+	<body ng-app="MainApp" ng-controller="MainController">
+		<header></header>
+		<main>
+			<div class="block">
+				<table id="informationContainer">
+					<tr>
+						<td id="information">
+							<p class="large blueText">Félix VEYSSEYRE</p>
+							<p class="">
+								Full stack web developer<br>
+								Engineering degree in computer science and applied mathematics
+							</p>
+							<p>
+								<table>
+									<tr ng-repeat="information in informations">
+										<td class="label">
+											<i class="fa fa-fw {{information.icon}}"></i>
+											{{information.label}}
+										</td>
+										<td>
+											{{information.text}}
+											<a ng-if="information.helpCallback" ng-click="information.helpCallback()" href="#">
+												<i class="fa fa-link lightGreyText"></i>
+											</a>
+										</td>
+									</tr>
+								</table>
+							</p>
+						</td>
+						<td id="profilePicture" class="alignRight">
+							<div class="separation"></div>
+							<div class="image">
+								<img src="image/profilePicture2.jpg" height="250"/>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div id="networks" class="blueBackground whiteText alignCenter">
+					<a ng-repeat="network in networks" ng-href="{{network.URL}}" target="_blank">
+						<i class="fa {{network.icon}}"></i>
+					</a>
+				</div>
+			</div>
+
+			<!-- Location -->
+
+			<div ng-show="displayLocation" class="block">
+				<iframe id="location" src="https://www.google.com/maps/embed/v1/view?zoom=12&center=45.7640%2C4.8357&key=AIzaSyBdFLSrZiGw0WX-35CcL_WwO2NLDMxVdVI"></iframe>
+			</div>
+
+			<!-- Resume -->
+
+			<div class="medium alignCenter bottomPadded">
+				Resume
+			</div>
+
+			<div id="resume" class="block padded">
+				<p class="alignJustify">
+					<p>Hello, my name is Félix VEYSSEYRE and I am a full stack web developer. I have an engineering degree in computer science with a major in applied mathematics.</p>
+					<p>I always loved to understand how things work, that is why I started engineering studies. Over time I fell in love with science and more particularly with mathematics where I could find the level of logic and strictness I like.</p>
+					<p>Nowadays, I like to design and implement web applications. It allows me to build complex projects easily, in a minimum of time and share them all around the world.</p>
+					<p> When I write some code, I pay a particular attention to four points: security, robustness, performance and maintainability.</p>
+					<p>I believe in science as a way to improve the human condition, and in open-source as a way to improve the technology.</p>
+				</p>
+				<br>
+				<p class="alignCenter">
+					<button ng-click="openURL('./file/CV - Félix VEYSSEYRE - EN.pdf')" class="orangeBackground whiteText">Download resume</button>
+				</p>
+			</div>
+
+			<!-- TimeLine -->
+
+			<div class="medium alignCenter bottomPadded">
+				Education and work experiences
+			</div>
+
+			<table id="timeLine">
+				<tr ng-repeat="timeLine in timeLines">
+					<td class="left">
+						<div ng-if="timeLine.type === 'education'">
+							<div class="block smallPadded alignJustify">
+								<p>
+									<span class="medium bold blueText">
+										{{timeLine.name}}
+									</span>
+									<br>
+									<span class="medium bold">
+										{{timeLine.school}}
+										<a ng-href="{{timeLine.URL}}" class="small lightGreyText">
+											<i class="fa fa-link"></i>
+										</a>
+									</span>
+									<br>
+									<span class="small lightGreyText">
+										{{timeLine.location}}, {{timeLine.timeRange}}
+									</span>
+								</p>
+								<p>
+									{{timeLine.text}}
+								</p>
+								<p ng-if="timeLine.note" class="orangeText">
+									{{timeLine.note}}
+								</p>
+							</div>
+							<div class="icon">
+								<i class="fa fa-graduation-cap"></i>
+							</div>
+						</div>
+					</td>
+					<td class="right">
+						<div ng-if="timeLine.type === 'work'">
+							<div class="block smallPadded alignJustify">
+								<p>
+									<span class="medium bold blueText">
+										{{timeLine.name}}
+									</span>
+									<br/>
+									<span class="medium bold">
+										{{timeLine.company}}
+										<a ng-href="{{timeLine.URL}}" class="small lightGreyText">
+											<i class="fa fa-link"></i>
+										</a>
+									</span>
+									<br>
+									<span class="small lightGreyText">
+										{{timeLine.location}}, {{timeLine.timeRange}}
+									</span>
+								</p>
+								<p>
+									{{timeLine.text}}
+								</p>
+								<ul>
+									<li ng-repeat="project in timeLine.projects">
+										{{project}}
+									</li>
+								</ul>
+							</div>
+							<div class="icon">
+								<i class="fa fa-institution"></i>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+
+			<!-- Technical Skills -->
+
+			<div class="medium alignCenter bottomPadded">
+				Technical skills
+			</div>
+
+			<div class="block padded">
+				<table id="technicalSkills">
+					<tr ng-repeat="technicalSkillGroup in technicalSkillGroups" ng-show="technicalSkillGroup.currentSkills.length || (technicalSkillGroup.nextSkills.length && displayNextSkills)">
+						<td class="chipsPaddingCompensation label bold">{{technicalSkillGroup.name}}</td>
+						<td>
+							<ul class="chips">
+								<li ng-repeat="skill in technicalSkillGroup.currentSkills" class="blueBackground">
+									{{skill}}
+								</li>
+								<li ng-repeat="skill in technicalSkillGroup.nextSkills" ng-show="displayNextSkills" class="orangeBackground">
+									{{skill}}
+								</li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+				<p class="alignCenter">
+					<button ng-click="toggleDisplayNextSkills()" class="orangeBackground whiteText">Display skills I would like to learn</button>
+				</p>
+			</div>
+
+			<!-- Language Skills -->
+
+			<div class="medium alignCenter bottomPadded">
+				Language skills
+			</div>
+
+			<div class="block padded">
+				<table id="languageSkills">
+					<tr ng-repeat="languageSkill in languageSkills">
+						<td class="label bold">{{languageSkill.name}}</td>
+						<td>
+							<span>
+								{{languageSkill.text}}
+								<br>
+							</span>
+							<span ng-if="languageSkill.certification" class="orangeText">
+								<!-- <i class="fa fa-certificate"></i> -->
+								{{languageSkill.certification}}
+								<br>
+							</span>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<!-- Extra-curricular Activities -->
+
+			<div class="medium alignCenter bottomPadded">
+				Extra-curricular activities
+			</div>
+
+			<div class="block padded">
+				<table id="extraCurricularActivities">
+					<tr ng-repeat="extraCurricularActivity in extraCurricularActivities">
+						<td class="label bold">{{extraCurricularActivity.name}}</td>
+						<td>
+							{{extraCurricularActivity.activities}}
+						</td>
+					</tr>
+				</table>
+			</div>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,473 @@
+/* Variables */
+
+/** Generic **/
+
+@fontFamily: 'Roboto', sans-serif;
+@fontSize: 14px;
+@transitionDuration: 200ms;
+@tipContainerColor: @black;
+@padding: 35px;
+@smallPadding: 20px;
+@timeLineIconSize: 18px;
+@loaderIconSize: 80px;
+
+/** Colors **/
+
+@grey00125: #fcfcfc;
+@grey0025: #f9f9f9;
+@grey005: #f2f2f2;
+@grey0075: #ececec;
+@grey01: #e6e6e6;
+@grey0125: #dfdfdf;
+@grey015: #d9d9d9;
+@grey0175: #d2d2d2;
+@grey02: #cccccc;
+@grey0225: #c6c6c6;
+@grey025: #bfbfbf;
+@grey0275: #b9b9b9;
+@grey03: #b3b3b3;
+
+@white: #ffffff;
+@grey: #222222;
+@lightGrey: #999999;
+@veryLightGrey: #bbbbbb;
+@red: #ed5564;
+@orange: #fb6e52;
+@green: #48cfae;
+@green2: #22a3a9;
+@blue: #2e8bda;
+@purple: #a279c5;
+@yellow: #fed432;
+@lightBlack: #212429;
+@black: #000000;
+
+/* Styles */
+
+*
+{
+	padding: 0px;
+	margin: 0px;
+}
+
+body
+{
+	font-family: @fontFamily;
+	font-size: @fontSize;
+	color: @lightBlack;
+	background: @grey0025;
+
+	header
+	{
+		width: 100%;
+		height: 300px;
+		background: @white;
+		background-image: url('../image/background1.jpg');
+		background-size: cover;
+		background-position: 0% 75%;
+		z-index: 1;
+	}
+
+	main
+	{
+		width: 100%;
+		max-width: 850px;
+		left: 50%;
+		margin: auto;
+		margin-top: -160px;
+		z-index: 2;
+
+		.block
+		{
+			width: 100%;
+			box-sizing: border-box;
+			margin-bottom: @padding;
+			background: @grey00125;
+			border-radius: 2px;
+			box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+			overflow: hidden;
+
+			&:hover
+			{
+				box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
+			}
+		}
+
+		.padded
+		{
+			padding: @padding;
+		}
+
+		.smallPadded
+		{
+			padding: @smallPadding;
+		}
+
+		.bottomPadded
+		{
+			padding-bottom: @padding;
+		}
+
+		#informationContainer
+		{
+			width: 100%;
+			border-collapse: collapse;
+
+			#information
+			{
+				padding: 35px 0px 0px 35px;
+				vertical-align: top;
+
+				p
+				{
+					margin: 0px 0px 10px 0px;
+				}
+
+				table
+				{
+					td
+					{
+						padding: 3px 15px 3px 0px;
+						font-size: 12px;
+
+						i
+						{
+							margin-right: 5px;
+						}
+
+						&.label
+						{
+							font-weight: bold;
+						}
+
+						&:not(.label)
+						{
+							color: @lightGrey;
+						}
+					}
+				}
+			}
+
+			#profilePicture
+			{
+				width: 375px;
+				height: 250px;
+
+				.image
+				{
+					height: 250px;
+				}
+
+				.separation
+				{
+					position: absolute;border-style: solid;
+					border-width: 250px 0px 0px 75px;
+					border-top-color: transparent;
+					border-right-color: transparent;
+					border-bottom-color: transparent;
+					border-left-color: @grey00125;
+				}
+			}
+		}
+
+		#networks
+		{
+			a
+			{
+				display: inline-block;
+				height: 60px;
+				width: 60px;
+				color: @white;
+				text-align: center;
+				line-height: 60px;
+
+				transition: all @transitionDuration;
+
+				&:hover
+				{
+					background: @green;
+				}
+			}
+		}
+
+		#resume
+		{
+			p
+			{
+				margin-bottom: 5px;
+			}
+		}
+
+		#location
+		{
+			width: 100%;
+			height: 250px;
+			border: none;
+		}
+
+		#timeLine
+		{
+			display: block;
+			width: 100%;
+			padding-bottom: @padding;
+			border-collapse: collapse;
+
+			tr:last-child
+			{
+				.left,
+				.right
+				{
+					padding-bottom: 0px;
+				}
+			}
+
+			.block
+			{
+				margin: 0px;
+
+				p
+				{
+					margin-bottom: 10px;
+				}
+
+				ul
+				{
+					list-style: none;
+
+					li
+					{
+						padding-left: 5px;
+						margin: 5px 5px 5px 0px;
+						border-left: 2px solid @blue;
+						transition: all @transitionDuration;
+
+						&:hover
+						{
+							border-left: 2px solid @green;
+						}
+					}
+				}
+			}
+
+			.icon
+			{
+				position: absolute;
+				top: 50%;
+				display: block;
+				width: @timeLineIconSize;
+				height: @timeLineIconSize;
+				padding: 7px;
+				margin-top: -(@timeLineIconSize + @padding / 2);
+				text-align: center;
+				color: @white;
+				border-radius: 50px;
+				background: @green;
+			}
+
+			.left,
+			.right
+			{
+				position: relative;
+				width: 50%;
+				padding-bottom: @padding;
+			}
+
+			.left
+			{
+				padding-right: @padding;
+				border-right: 4px solid @green;
+
+				.icon
+				{
+					right: -18px;
+				}
+			}
+
+			.right
+			{
+				padding-left: @padding;
+				border-left: 4px solid @green;
+
+				.icon
+				{
+					left: -18px;
+				}
+			}
+		}
+
+		#technicalSkills,
+		#languageSkills,
+		#extraCurricularActivities
+		{
+			width: 100%;
+			border-collapse: collapse;
+
+			tr
+			{
+				&:not(:last-child)
+				{
+					td
+					{
+						border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+					}
+				}
+
+				td
+				{
+					padding: 7.5px;
+
+					&.label
+					{
+						width: 150px;
+						vertical-align: top;
+					}
+
+					&.chipsPaddingCompensation
+					{
+						padding-top: 15px;
+					}
+				}
+			}
+		}
+	}
+
+	a
+	{
+		text-decoration: none;
+		color: @black;
+	}
+
+	button
+	{
+		display: inline;
+		height: 30px;
+		padding: 7.5px;
+		box-sizing: border-box;
+
+		color: @grey;
+		font-family: @fontFamily;
+		font-size: @fontSize;
+		vertical-align: middle;
+		text-transform: uppercase;
+
+		cursor: pointer;
+		background-color: rgba(0, 0, 0, 0.1);
+		border: none;
+		border-radius: 2px;
+		box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+		outline: none;
+
+		transition: all @transitionDuration;
+	}
+
+	.chips
+	{
+		list-style: none;
+
+		li
+		{
+			float: left;
+			padding: 5px 7.5px 5px 7.5px;
+			margin: 2.5px;
+			color: @white;
+			border-radius: 40px;
+			box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+			cursor: default;
+			transition: all @transitionDuration;
+
+			&:hover
+			{
+				box-shadow: none;
+			}
+		}
+	}
+
+	.large
+	{
+		font-size: 30px;
+	}
+
+	.medium
+	{
+		font-size: 16px;
+	}
+
+	.small
+	{
+		font-size: 12px;
+	}
+
+	.thin
+	{
+		font-weight: 200;
+	}
+
+	.bold
+	{
+		font-weight: 700;
+	}
+
+	.blueBackground
+	{
+		background: @blue;
+	}
+
+	.orangeBackground
+	{
+		background: @orange;
+	}
+
+	.whiteText
+	{
+		color: @white;
+	}
+
+	.blueText
+	{
+		color: @blue;
+	}
+
+	.greenText
+	{
+		color: @green;
+	}
+
+	.orangeText
+	{
+		color: @orange;
+	}
+
+	.lightGreyText
+	{
+		color: @lightGrey;
+	}
+
+	.alignCenter
+	{
+		text-align: center;
+	}
+
+	.alignRight
+	{
+		text-align: right;
+	}
+
+	.alignLeft
+	{
+		text-align: left;
+	}
+
+	.alignJustify
+	{
+		text-align: justify;
+	}
+
+	.full
+	{
+		width: 100%;
+	}
+	
+	.pointer
+	{
+		cursor: pointer;
+	}
+}
