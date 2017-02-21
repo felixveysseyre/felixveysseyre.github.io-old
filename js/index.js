@@ -163,7 +163,6 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 			currentSkills: [
 				'Symfony',
 				'CodeIgniter',
-				'Twig',
 				'Doctrine',
 			],
 			nextSkills: [
@@ -178,6 +177,7 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 				'React',
 				'jQuery UI',
 				'jQuery',
+				'Twig',
 				'LESS',
 				'CSS',
 			],
