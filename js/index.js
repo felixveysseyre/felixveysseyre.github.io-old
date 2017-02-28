@@ -54,7 +54,7 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 		{
 			icon: 'fa-cloud-download',
 			name: 'Download resume',
-			URL: 'file/CV - Félix Veysseyre - EN.pdf'
+			URL: 'file/CV - Félix VEYSSEYRE - EN.pdf'
 		},
 		{
 			icon: 'fa-linkedin',
