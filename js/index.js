@@ -92,6 +92,9 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 				'Conception of a web application, allowing users to view and interact in real time with scientific simulations, using distributed remote rendering',
 				'Conception and development of a modular content management web application. Designed to provide high performance, high availability, to be scalable and secure',
 				'Conception and development of a image web viewer handling very large images with multiple dimensions (space, time, colors channels, etc.)',
+				'Conception and development of a web application, allowing users to view and interact in real time with MATLAB figures',
+				'Conception and development of an online PDF generator able to create PDF files from custom templates and data supplied manually',
+				'Conception and development of an online team task manager able to handle many types of tasks, teams and various constrains',
 			],
 		},
 		{
