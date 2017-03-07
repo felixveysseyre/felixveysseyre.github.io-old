@@ -165,8 +165,12 @@
 									{{timeLine.text}}
 								</p>
 								<ul>
-									<li ng-repeat="project in timeLine.projects">
+									<li ng-repeat="project in timeLine.projects" ng-show="($index < numberOfProjectsToDisplayByDefault) || (timeLine.projects.toggled === true)">
 										{{project}}
+									</li>
+									<li ng-if="timeLine.projects.length > numberOfProjectsToDisplayByDefault" class="toggleAction pointer" ng-click="timeLine.projects.toggled = !timeLine.projects.toggled">
+										<i ng-show="timeLine.projects.toggled !== true" class="fa fa-chevron-down"></i>
+										<i ng-show="timeLine.projects.toggled === true" class="fa fa-chevron-up"></i>
 									</li>
 								</ul>
 							</div>

@@ -305,6 +305,7 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 
 	/* Attributes */
 
+	$scope.numberOfProjectsToDisplayByDefault = 3;
 	$scope.displayLocation = false;
 	$scope.displayNextSkills = false;
 
