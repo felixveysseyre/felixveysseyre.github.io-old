@@ -85,7 +85,7 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 			name: 'R&D engineer',
 			location: 'Lyon, FR',
 			URL: 'https://kitware.com',
-			text: 'Full stack web developer',
+			text: 'Full stack web developer in charge of all web projects as well as the communication with related customers. Editor of many proposals.',
 
 			company: 'Kitware, Inc.',
 			projects: [
@@ -103,7 +103,7 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 			name: 'R&D junior engineer',
 			location: 'Lyon, FR',
 			URL: 'https://orange.com',
-			text: 'Full stack web developer, final year internship',
+			text: 'Full stack web developer in charge of his final year internship project.',
 
 			company: 'Orange',
 			projects: [
