@@ -67,9 +67,11 @@
 					</tr>
 				</table>
 				<div id="networks" class="blueBackground whiteText alignCenter">
-					<a ng-repeat="network in networks" ng-href="{{network.URL}}" target="_blank">
-						<i class="fa {{network.icon}}"></i>
-					</a>
+					<div ng-repeat="network in networks" tooltip={{network.tooltip}} class="network">
+						<a ng-href="{{network.URL}}" target="_blank">
+							<i class="fa {{network.icon}}"></i>
+						</a>
+					</div>
 				</div>
 			</div>
 
@@ -127,7 +129,9 @@
 									</span>
 									<br>
 									<span class="small lightGreyText">
-										{{timeLine.location}}, {{timeLine.timeRange}}
+										<span>{{timeLine.location}}</span>
+										,
+										<span tooltip="{{timeLine.detailedTimeRange}}">{{timeLine.timeRange}}</span>
 									</span>
 								</p>
 								<p>
@@ -158,7 +162,9 @@
 									</span>
 									<br>
 									<span class="small lightGreyText">
-										{{timeLine.location}}, {{timeLine.timeRange}}
+										<span>{{timeLine.location}}</span>
+										,
+										<span tooltip="{{timeLine.detailedTimeRange}}">{{timeLine.timeRange}}</span>
 									</span>
 								</p>
 								<p>

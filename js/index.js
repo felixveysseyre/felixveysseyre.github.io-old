@@ -49,32 +49,38 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 		{
 			icon: 'fa-envelope',
 			name: 'Email',
-			URL: 'mailto:felix.veysseyre@gmail.com'
+			URL: 'mailto:felix.veysseyre@gmail.com',
+			tooltip: 'Send me an email'
 		},
 		{
 			icon: 'fa-cloud-download',
 			name: 'Download resume',
-			URL: 'file/CV - Félix VEYSSEYRE - EN.pdf'
+			URL: 'file/CV - Félix VEYSSEYRE - EN.pdf',
+			tooltip: 'Download my resume'
 		},
 		{
 			icon: 'fa-linkedin',
-			name: 'LinkedId',
-			URL: 'https://fr.linkedin.com/in/felix-veysseyre'
+			name: 'LinkedIn',
+			URL: 'https://fr.linkedin.com/in/felix-veysseyre',
+			tooltip: 'LinkedIn'
 		},
 		{
 			icon: 'fa-github',
 			name: 'GitHub',
-			URL: 'https://github.com/felixveysseyre'
+			URL: 'https://github.com/felixveysseyre',
+			tooltip: 'GitHub'
 		},
 		{
 			icon: 'fa-stack-overflow',
 			name: 'StackOverflow',
-			URL: 'https://stackoverflow.com/users/3483406/félix-veysseyre'
+			URL: 'https://stackoverflow.com/users/3483406/félix-veysseyre',
+			tooltip: 'StackOverflow'
 		},
 		{
 			icon: 'fa-instagram',
 			name: 'Instagram',
-			URL: 'https://www.instagram.com/flx.vsr'
+			URL: 'https://www.instagram.com/flx.vsr',
+			tooltip: 'Instagram'
 		},
 	];
 
@@ -82,6 +88,7 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 		{
 			type: 'work',
 			timeRange: '2015 - ?',
+			detailedTimeRange: '01/10/2015 - ?',
 			name: 'R&D engineer',
 			location: 'Lyon, FR',
 			URL: 'https://kitware.com',
@@ -100,6 +107,7 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 		{
 			type: 'work',
 			timeRange: '2014 - 2015',
+			detailedTimeRange: '15/09/2014 - 15/09/2015',
 			name: 'R&D junior engineer',
 			location: 'Lyon, FR',
 			URL: 'https://orange.com',
@@ -113,6 +121,7 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 		{
 			type: 'education',
 			timeRange: '2014 - 2015',
+			detailedTimeRange: '15/09/2014 - 01/07/2015',
 			name: 'Engineering cycle',
 			location: 'Lyon, FR',
 			URL: 'http://www.cpe.fr/',
@@ -124,6 +133,7 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 		{
 			type: 'work',
 			timeRange: '2013 - 2014',
+			detailedTimeRange: '01/07/2013 - 01/07/2014',
 			name: 'R&D junior engineer',
 			location: 'Chapel Hill, USA',
 			URL: 'https://kitware.com',
@@ -139,6 +149,7 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 		{
 			type: 'education',
 			timeRange: '2011 - 2013',
+			detailedTimeRange: '01/09/2011 - 01/07/2013',
 			name: 'Engineering cycle',
 			location: 'Lyon, FR',
 			URL: 'http://www.cpe.fr',
@@ -150,6 +161,7 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 		{
 			type: 'education',
 			timeRange: '2009 - 2011',
+			detailedTimeRange: '01/09/2009 - 01/07/2011',
 			name: 'Preparatory class',
 			location: 'Lyon, FR',
 			URL: 'http://www.prepa-cpe.fr',

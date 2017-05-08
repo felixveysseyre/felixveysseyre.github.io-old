@@ -5,7 +5,7 @@
 @fontFamily: 'Roboto', sans-serif;
 @fontSize: 14px;
 @transitionDuration: 200ms;
-@tipContainerColor: @black;
+@tooltipContainerColor: @lightBlack;
 @padding: 35px;
 @smallPadding: 20px;
 @timeLineIconSize: 18px;
@@ -171,20 +171,25 @@ body
 
 		#networks
 		{
-			a
+			.network
 			{
 				display: inline-block;
-				height: 60px;
-				width: 60px;
-				color: @white;
-				text-align: center;
-				line-height: 60px;
 
-				transition: all @transitionDuration;
-
-				&:hover
+				a
 				{
-					background: @green;
+					display: block;
+					height: 60px;
+					width: 60px;
+					color: @white;
+					text-align: center;
+					line-height: 60px;
+
+					transition: all @transitionDuration;
+
+					&:hover
+					{
+						background: @green;
+					}
 				}
 			}
 		}
@@ -369,6 +374,62 @@ body
 		outline: none;
 
 		transition: all @transitionDuration;
+	}
+
+	[tooltip]
+	{
+		position: relative;
+
+		&::before,
+		&::after
+		{
+			display: none;
+			position: absolute;
+			left: 50%;
+			opacity: 0;
+			transform: translate(-50%, 0);
+			transition: all @transitionDuration;
+			user-select: none;
+			pointer-events: none;
+		}
+
+		&::before
+		{
+			bottom: ~'calc(100% + 5px)';
+			content: '';
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-top: 5px solid @tooltipContainerColor;
+			z-index: 1001;
+		}
+
+		&::after
+		{
+			bottom: ~'calc(100% + 10px)';
+			min-width: 50px;
+			max-width: 250px;
+			padding: 7.5px;
+			content: attr(tooltip);
+			text-align: center;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			color: @white;
+			background: @tooltipContainerColor;
+			border-radius: 2px;
+			box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+			z-index: 1000;
+		}
+
+		&:hover
+		{
+			&::after,
+			&::before
+			{
+				display: block;
+				opacity: 1;
+			}
+		}
 	}
 
 	.chips
