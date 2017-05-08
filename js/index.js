@@ -180,6 +180,8 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 				'React',
 				'jQuery UI',
 				'jQuery',
+				'Node',
+				'WebPack',
 				'Twig',
 				'LESS',
 				'CSS',
@@ -269,7 +271,8 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 		{
 			name: 'Others',
 			currentSkills: [
-				'Git', 'Travis', 'Composer', 'NPM'
+				'Git',
+				'Travis',
 			],
 			nextSkills: [
 				'Docker'
