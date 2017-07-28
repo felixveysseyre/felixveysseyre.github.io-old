@@ -209,7 +209,7 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 			nextSkills: []
 		},
 		{
-			name: 'Web visualisation',
+			name: 'Web visualization',
 			currentSkills: [
 				'GoogleMaps API',
 				'GoogleChart',
