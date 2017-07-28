@@ -188,12 +188,10 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 		{
 			name: 'Frontend',
 			currentSkills: [
-				'AngularJS',
 				'React',
+				'AngularJS',
 				'jQuery UI',
 				'jQuery',
-				'Node',
-				'WebPack',
 				'Twig',
 				'LESS',
 				'CSS',
@@ -213,14 +211,13 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 		{
 			name: 'Web visualisation',
 			currentSkills: [
-				'Three.js',
-				'VTK.js',
-				'WebGL',
-				'ParaViewWeb',
+				'GoogleMaps API',
 				'GoogleChart',
 				'Plotly.js',
-				'GoogleMaps API',
 				'OpenLayers',
+				'Three.js',
+				'VTK.js',
+				'ParaViewWeb',
 			],
 			nextSkills: []
 		},
@@ -228,24 +225,22 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 			name: 'System administration',
 			currentSkills: [
 				'Unix',
+				'Shell',
 				'Apache',
 				'Crontab',
-				'Shell',
-				'Python',
-				'RSYSLOG',
 				'Iptable',
+				'RSYSLOG',
 			],
 			nextSkills: []
 		},
 		{
 			name: 'Software',
 			currentSkills: [
-				'C++',
-				'Qt',
-				'CMake',
+				'Python',
 			],
 			nextSkills: []
 		},
+		/*
 		{
 			name: 'Testing',
 			currentSkills: [
@@ -254,6 +249,7 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 			],
 			nextSkills: []
 		},
+		*/
 		{
 			name: 'Data analysis',
 			currentSkills: [
@@ -285,10 +281,13 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 			currentSkills: [
 				'Git',
 				'Travis',
+				'Docker',
+				'Composer',
+				'NPM',
+				'WebPack',
+				'ESLint',
 			],
-			nextSkills: [
-				'Docker'
-			]
+			nextSkills: []
 		},
 	];
 
@@ -296,7 +295,7 @@ app.controller('MainController', function($rootScope, $scope, $window) {
 		{
 			name: 'French',
 			text: 'Native speaker',
-			certification: false
+			certification: null
 		},
 		{
 			name: 'English',
